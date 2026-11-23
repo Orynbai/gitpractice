@@ -27,4 +27,8 @@ jobs:
         run: echo "$GITHUB_WORKSPACE"
 
       - name: Show current directory
-        run: pwd             
+        run: pwd 
+
+      - name: Show Github directory
+        run: pwd
+        working-directory: .github               
