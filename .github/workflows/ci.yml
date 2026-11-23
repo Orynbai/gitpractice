@@ -21,4 +21,7 @@ jobs:
         run: uname -a 
 
       - name: Show files
-        run: ls -la         
+        run: ls -la
+
+      - name: Show workspace
+        run: echo "$GITHUB_WORKSPACE"           
