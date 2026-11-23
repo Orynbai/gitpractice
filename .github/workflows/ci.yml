@@ -12,4 +12,10 @@ jobs:
 
     steps:
       - name: Print message
-        run: echo "Github Actions is working!"      
+        run: echo "Github Actions is working!"
+
+      - name: Show OS
+        run: uname -a 
+
+      - name: Show files
+        run: ls -la         
