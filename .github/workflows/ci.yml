@@ -24,4 +24,7 @@ jobs:
         run: ls -la
 
       - name: Show workspace
-        run: echo "$GITHUB_WORKSPACE"           
+        run: echo "$GITHUB_WORKSPACE"
+
+      - name: Show current directory
+        run: pwd             
