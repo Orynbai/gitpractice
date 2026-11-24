@@ -48,9 +48,16 @@ jobs:
         env:
           APP_NAME: GitPractice
           APP_VERSION: 1.0
-        run: |
+        run: 
           echo "Application: $APP_NAME"
           echo "Version: $APP_VERSION"        
 
       - name: Show git history
         run: git log --oneline --all --graph    
+
+      - name: Set app Version
+        id: app_info
+        run: echo "version=1.0" >> "$GITHUB_OUTPUT"
+
+      - name: Show application Version
+        run: echo "Version ${{steps.app_info.output.version}}"  
