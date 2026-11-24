@@ -9,11 +9,13 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    # env:
-    #   APP_NAME: Gitpractice
+    env:
+      APP_NAME: Gitpractice
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
 
       - name: Print message
         run: echo "Github Actions is working!"
