@@ -9,17 +9,8 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    env:
-      APP_NAME: Gitpractice
-    steps:
-      - name: Show app name
-        run: echo "Application:$APP_NAME"
-      
-      - name: Show another variable
-        env:
-          APP_VERSION: 1.0
-        run: echo "Version:$APP_VERSION"   
-
+    # env:
+    #   APP_NAME: Gitpractice
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
@@ -42,6 +33,14 @@ jobs:
       - name: Show Github directory
         run: pwd
         working-directory: .github
+
+      - name: Show app name
+        run: echo "Application:$APP_NAME"
+      
+      - name: Show another variable
+        env:
+          APP_VERSION: 1.0
+        run: echo "Version:$APP_VERSION"   
 
       - name: Show environment variable
         env:
