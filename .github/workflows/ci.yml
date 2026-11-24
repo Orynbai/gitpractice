@@ -60,4 +60,4 @@ jobs:
         run: echo "version=1.0" >> "$GITHUB_OUTPUT"
 
       - name: Show application Version
-        run: echo "Version ${{steps.app_info.output.version}}"  
+        run: echo "Version: ${{steps.app_info.outputs.version}}"  
