@@ -9,6 +9,16 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    env:
+      APP_NAME: Gitpractice
+    steps:
+      - name: Show app name
+        run: echo "Application:$APP_NAME"
+      
+      - name: Show another variable
+        env:
+          APP_VERSION: 1.0
+        run: echo "Version:$APP_VERSION"   
 
     steps:
       - name: Checkout repo
@@ -39,4 +49,4 @@ jobs:
           APP_VERSION: 1.0
         run: |
           echo "Application: $APP_NAME"
-          echo "Version: $APP_VERSION"  
+          echo "Version: $APP_VERSION"        
