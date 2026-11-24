@@ -31,4 +31,12 @@ jobs:
 
       - name: Show Github directory
         run: pwd
-        working-directory: .github               
+        working-directory: .github
+
+      - name: Show environment variable
+        env:
+          APP_NAME: GitPractice
+          APP_VERSION: 1.0
+        run: |
+          echo "Application: $APP_NAME"
+          echo "Version: $APP_VERSION"  
