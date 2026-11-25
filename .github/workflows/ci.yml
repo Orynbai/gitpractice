@@ -1,0 +1,64 @@
+name: First CI
+
+on:
+  pull_request:
+    branches:
+      - main
+
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    env:
+      APP_NAME: Gitpractice
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Print message
+        run: echo "Github Actions is working!"
+
+      - name: Show OS
+        run: uname -a 
+
+      - name: Show files
+        run: ls -la
+
+      - name: Show workspace
+        run: echo "$GITHUB_WORKSPACE"
+
+      - name: Show current directory
+        run: pwd 
+
+      - name: Show Github directory
+        run: pwd
+        working-directory: .github
+
+      - name: Show app name
+        run: echo "Application:$APP_NAME"
+      
+      - name: Show another variable
+        env:
+          APP_VERSION: 1.0
+        run: echo "Version:$APP_VERSION"   
+
+      - name: Show environment variable
+        env:
+          APP_NAME: GitPractice
+          APP_VERSION: 1.0
+        run: |
+          echo "Application: $APP_NAME"
+          echo "Version: $APP_VERSION"     
+
+      - name: Show git history
+        run: git log --oneline --all --graph    
+
+      - name: Set app Version
+        id: app_info
+        run: echo "version=1.0" >> "$GITHUB_OUTPUT"
+
+      - name: Show application Version
+        run: |
+          echo "Version: ${{ steps.app_info.outputs.version }}"  
