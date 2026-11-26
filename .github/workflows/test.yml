@@ -20,12 +20,12 @@ jobs:
         pwd 
         ls -la
         git ls-files
-        
+
     - name: Check Readme
       run: |
-        if [ -f "README.md" ]; then
+        if [ -f "Readme.md" ]; then
           echo "File exist"
-          if [ -s "README.md" ]; then
+          if [ -s "Readme.md" ]; then
             echo "All checks passed"
             exit 0
           else
