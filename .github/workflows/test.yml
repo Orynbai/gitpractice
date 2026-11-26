@@ -1,0 +1,45 @@
+name: Task CI
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: Debug files
+      run: |
+        echo "Current directory"
+        pwd 
+        ls -la
+        git ls-files
+        wc -c Readme.md
+        git status
+        git log --oneline --all --graph
+        git show 
+
+    - name: Check Readme
+      run: |
+        if [ -f ".github/workflows/README.md" ]; then
+          echo "File exist"
+          if [ -s ".github/workflows/README.md" ]; then
+            echo "All checks passed"
+            exit 0
+          else
+            echo "Checks doesn't passed"
+            exit 1
+          fi  
+        else
+          echo "file doesn't exist"
+          exit 1      
+        fi  
+
+    - name: Next step
+      run: echo "Next step started"      
