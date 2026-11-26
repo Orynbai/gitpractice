@@ -27,9 +27,9 @@ jobs:
 
     - name: Check Readme
       run: |
-        if [ -f "Readme.md" ]; then
+        if [ -f ".github/workflows/README.md" ]; then
           echo "File exist"
-          if [ -s "Readme.md" ]; then
+          if [ -s ".github/workflows/README.md" ]; then
             echo "All checks passed"
             exit 0
           else
