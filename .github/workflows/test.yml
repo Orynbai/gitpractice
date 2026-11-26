@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu_latest
     steps:
     - name: Checkout repo
-      run: actions/checkout@v4
+      uses: actions/checkout@v4
       with:
         fetch-depth: 0
 
