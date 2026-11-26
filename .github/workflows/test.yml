@@ -20,6 +20,10 @@ jobs:
         pwd 
         ls -la
         git ls-files
+        wc -c Readme.md
+        git status
+        git log --oneline --all --graph
+        git show 
 
     - name: Check Readme
       run: |
